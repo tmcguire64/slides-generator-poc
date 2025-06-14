@@ -35,43 +35,44 @@ app.post('/generate-slide', async (req, res) => {
     await slides.presentations.batchUpdate({
       presentationId: newFileId,
       requestBody: {
-        requests: [
-          {
-            replaceAllText: {
-              containsText: {
-                text: '{{key_term_1}}',
-                matchCase: true
-              },
-              replaceText: key_term_1
-            }
-          },
-          {
-            replaceAllText: {
-              containsText: {
-                text: '{{definition_1}}',
-                matchCase: true
-              },
-              replaceText: definition_1
-            }
-          },
-            {
-            replaceAllText: {
-              containsText: {
-                text: '{{key_term_2}}',
-                matchCase: true
-              },
-              replaceText: key_term_2
-            }
-          },
-             {
-            replaceAllText: {
-              containsText: {
-                text: '{{definition_2}}',
-                matchCase: true
-              },
-              replaceText: definition_2
-            }
-        ]
+requests: [
+  {
+    replaceAllText: {
+      containsText: {
+        text: '{{key_term_1}}',
+        matchCase: true
+      },
+      replaceText: key_term_1
+    }
+  },
+  {
+    replaceAllText: {
+      containsText: {
+        text: '{{definition_1}}',
+        matchCase: true
+      },
+      replaceText: definition_1
+    }
+  },
+  {
+    replaceAllText: {
+      containsText: {
+        text: '{{key_term_2}}',
+        matchCase: true
+      },
+      replaceText: key_term_2
+    }
+  },
+  {
+    replaceAllText: {
+      containsText: {
+        text: '{{definition_2}}',
+        matchCase: true
+      },
+      replaceText: definition_2
+    }
+  }
+]
       }
     });
 
