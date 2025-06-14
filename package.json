@@ -1,0 +1,16 @@
+## 📄 **package.json**
+```json
+{
+  "name": "slides-generator-poc",
+  "version": "1.0.0",
+  "description": "POC for generating Google Slides with placeholders filled in",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "googleapis": "^133.0.0"
+  }
+}
