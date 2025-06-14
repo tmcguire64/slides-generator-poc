@@ -16,7 +16,7 @@ const auth = new google.auth.GoogleAuth({
 const TEMPLATE_FILE_ID = '15LIRhI8CdPmJyAOJD4gx343NK3Gz9UtOi_VtQjMjixY'; // Replace this with your template ID
 
 app.post('/generate-slide', async (req, res) => {
-  const { name, title } = req.body;
+  const { key_term_1, definition_1, key_term_2, definition_2 } = req.body;
 
   try {
     const client = await auth.getClient();
@@ -26,7 +26,7 @@ app.post('/generate-slide', async (req, res) => {
     const copyResponse = await drive.files.copy({
       fileId: TEMPLATE_FILE_ID,
       requestBody: {
-        name: `Generated Slides - ${title}`
+        name: `Generated Slides - ${key_term_1}`
       }
     });
 
@@ -53,7 +53,7 @@ app.post('/generate-slide', async (req, res) => {
               },
               replaceText: definition_1
             }
-          }
+          },
             {
             replaceAllText: {
               containsText: {
@@ -62,7 +62,7 @@ app.post('/generate-slide', async (req, res) => {
               },
               replaceText: key_term_2
             }
-          }
+          },
              {
             replaceAllText: {
               containsText: {
