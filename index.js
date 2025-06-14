@@ -79,12 +79,12 @@ requests: [
     await drive.permissions.create({
       fileId: newFileId,
       requestBody: {
-        role: 'reader',
+        role: 'commenter',
         type: 'anyone'
       }
     });
 
-    const fileLink = `https://docs.google.com/presentation/d/${newFileId}/edit`;
+    const fileLink = `https://docs.google.com/presentation/d/${newFileId}/copy`;
     res.json({ link: fileLink });
 
   } catch (err) {
